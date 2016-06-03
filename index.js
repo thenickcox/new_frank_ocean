@@ -8,6 +8,7 @@ const spotifyUrl = `https://api.spotify.com/v1/artists/${artistId}/albums`;
 const currentAlbumCount = 20;
 
 app.set('view engine', 'pug');
+app.set('port', (process.env.PORT || 5000));
 
 app.get('/', (req, res) => {
   fetch(spotifyUrl)
@@ -22,6 +23,6 @@ app.get('/', (req, res) => {
     });
 });
 
-app.listen(8888, () => {
-  console.log('Listening on port 3000!');
+app.listen(app.get('port'), () => {
+  console.log(`Listening on port ${app.get('port')}!`);
 });
