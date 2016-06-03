@@ -1,0 +1,16 @@
+{
+  "name": "frank_ocean",
+  "version": "1.0.0",
+  "description": "A bot that checks if there's a new Frank Ocean record",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "node-fetch": "^1.5.3",
+    "pug": "^2.0.0-beta2"
+  }
+}
