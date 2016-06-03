@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
+const moment = require('moment');
 
 const artistId = '2h93pZq0e7k5yf4dywlkpM';
 const spotifyUrl = `https://api.spotify.com/v1/artists/${artistId}/albums`;
@@ -13,10 +14,14 @@ app.get('/', (req, res) => {
     .then(r => r.json())
     .then(d => d.items.length)
     .then((albumCount) => {
-      res.render('index', { isNewAlbum: albumCount > currentAlbumCount ? 'YES' : 'NO' });
+      res.render('index', {
+        isNewAlbum: albumCount > currentAlbumCount ? 'YES' : 'NO',
+        isIsNot: albumCount > currentAlbumCount ? 'is' : 'is not',
+        date: moment().format('dddd, MMMM Do, Y')
+      });
     });
 });
 
-app.listen(3000, () => {
+app.listen(8888, () => {
   console.log('Listening on port 3000!');
 });
