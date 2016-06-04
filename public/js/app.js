@@ -10,6 +10,8 @@ var check = function() {
       $('h1')
         .css('background-image', 'url(images/' + data.backgroundImage + ')')
         .removeClass('loading');
+      var imageNum = Math.floor(Math.random() * 5) + 1;
+      $('img.frank').attr('src', 'images/frank/frank-' + imageNum + '.png');
     }
   });
 }
