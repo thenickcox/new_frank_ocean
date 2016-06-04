@@ -1,6 +1,11 @@
 html
   head
     title= 'Is there a new frank ocean album yet'
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='js/app.js')
+    link(rel='stylesheet', href='css/main.css', type='text/css')
   body
-    h1= isNewAlbum
-    p There #{isIsNot} a new Frank Ocean album as of #{date}.
+    div.loader
+    h1
+    img.frank(src='images/frank/frank-1.png')
+    button.how-about-now How About Now?

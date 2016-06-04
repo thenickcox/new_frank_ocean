@@ -1,0 +1,61 @@
+div.loader {
+  background: url('../images/outyet.svg') center center no-repeat #000;
+  background-size: 90%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+h1 {
+  background: url('') center center no-repeat;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 800px;
+  height: 100px;
+  position: relative;
+  top: 10vh;
+  margin-bottom: -50vh;
+  height: 50vw;
+}
+
+* {
+  cursor: help;
+}
+
+.how-about-now {
+  background: url('../images/button.svg') no-repeat center center;
+  -webkit-appearance: none;
+  width: 200px;
+  background-size: 100%;
+  border: none;
+  text-indent: -9999px;
+  height: 45px;
+  margin: 0 auto;
+  display: block;
+}
+
+img.frank {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 80%;
+  display: block;
+}
+
+h1.loading {
+  background: url('../images/questionmark.svg') center center no-repeat;
+  -webkit-animation:spin 1.5s linear infinite;
+  -moz-animation:spin 1.5s linear infinite;
+  animation:spin 1.5s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
