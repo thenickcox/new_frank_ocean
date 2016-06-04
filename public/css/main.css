@@ -15,6 +15,7 @@ body, html {
 
 body {
   background: #f2f2f2;
+  overflow: hidden;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -22,7 +23,7 @@ body {
 
 .content-container {
   margin: 0 auto;
-  max-width: 1500;
+  max-width: 88vw;
   position: relative;
   top: 50%;
   vertical-align: middle;
@@ -73,11 +74,11 @@ h1 {
   height: 40px;
   display: block;
   padding: 0;
-  margin: 10% auto 0;
+  margin: 3% auto 0;
   position: relative;
 }
 
-.how-about-now::after {
+.how-about-now:after {
   background: url('../images/line.svg') repeat-x center center;
   -webkit-appearance: none;
   content: '';
@@ -86,7 +87,7 @@ h1 {
   position: absolute;
   bottom: -40%;
   max-width: 300px;
-  width: 50vw;
+  width: 100%;
 }
 
 img.frank {
@@ -97,6 +98,7 @@ img.frank {
 }
 
 h1.loading {
+  width: 70%;
   background: url('../images/questionmark.svg') no-repeat center center / 20%;
   -webkit-animation:spin 1.5s linear infinite;
   -moz-animation:spin 1.5s linear infinite;
