@@ -36,6 +36,18 @@ body {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Maison Neue Mono', monospaced;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  position: relative;
+  top: 5%;
 }
 
 h1 {
