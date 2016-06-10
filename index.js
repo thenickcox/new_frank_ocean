@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
-const moment = require('moment');
 
 const artistId = '2h93pZq0e7k5yf4dywlkpM';
 const spotifyUrl = `https://api.spotify.com/v1/artists/${artistId}/albums`;
@@ -24,7 +23,7 @@ app.get('/check', (req, res) => {
       const random = Math.floor(Math.random() * 6) + 1;
       const yesNo = isNewAlbum === false ? 'no' : 'yes';
       const response = `headline-${yesNo}-${random}.svg`;
-      res.json({ 'backgroundImage': response });
+      res.json({ backgroundImage: response });
     });
 });
 

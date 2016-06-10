@@ -26,4 +26,8 @@ $(document).ready(function() {
     $(this).text('How about now?');
     check();
   });
+
+  $('.flint-modal-toggle').click(function(){
+    $('.love-flint-modal').toggleClass('active');
+  });
 });

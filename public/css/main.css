@@ -1,10 +1,60 @@
-div.loader {
-  background: url('../images/outyet.svg') center center no-repeat #000;
-  background-size: 90%;
+.modal {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 10;
+}
+
+div.loader {
+  background: url('../images/outyet.svg') center center no-repeat #000;
+  background-size: 90%;
+}
+
+.love-flint-modal {
+  top: -100%;
+  left: 0;
+  font-family: 'Maison Neue Mono', monospaced;
+  background: #000;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: top 150ms ease-in-out;
+}
+
+.love-flint-modal.active {
+  top: 0;
+}
+
+.love-flint-modal a:link, .love-flint-modal a:visited {
+  color: #666;
+  text-decoration: none;
+}
+
+.love-flint-modal p {
+  width: 90%;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.love-flint-modal__inner {
+  width: 90%;
+  max-width: 700px;
+  margin: calc(50vh - 180px) auto;
+  position: relative;
+}
+
+.love-flint-modal__inner span {
+  font-size: 22px;
+  position: absolute;
+  top: 50%;
+}
+
+.love-flint-modal p:last-child {
+  margin-top: 10%;
+  color: #666;
 }
 
 body, html {
@@ -16,26 +66,50 @@ body, html {
 body {
   background: #f2f2f2;
   overflow: hidden;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
 .content-container {
-  margin: 0 auto;
-  max-width: 88vw;
-  position: relative;
-  top: 50%;
-  vertical-align: middle;
-  transform: translateY(-50%);
+  display: table;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+.table-cell.side {
+  width: 15vw;
+}
+
+.table-cell.middle {
+  width: 70vw;
+}
+
+.table-row.outer .table-cell {
+  height: calc(20vh - 50px);
+}
+
+.table-row.inner .table-cell {
+  height: calc(60vh - 50px);
+}
+
+.sidebar-img {
+  width: 16px;
 }
 
 .main-content {
   display: table;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   margin: 0 auto;
 }
 
@@ -54,16 +128,13 @@ h1 {
   background: url('') no-repeat center center / 140%;
   display: table-cell;
   margin: 0 auto;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   max-width: 800px;
   position: absolute;
   left: 0;
   right: 0;
   z-index: 1;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
 * {
@@ -86,7 +157,7 @@ h1 {
   height: 40px;
   display: block;
   padding: 0;
-  margin: 3% auto 0;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -105,8 +176,8 @@ h1 {
 img.frank {
   margin: 0 auto;
   text-align: center;
-  max-width: 80%;
   display: block;
+  max-width: 100%;
 }
 
 h1.loading {
