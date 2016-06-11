@@ -1,27 +1,57 @@
 .modal {
+  color: #fff;
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 10;
+  left: 0;
+}
+
+.modal h2 {
+  bottom: 5%;
+  position: absolute;
 }
 
 div.loader {
   background: url('../images/outyet.svg') center center no-repeat #000;
-  background-size: 90%;
+  background-size: 85%;
+}
+
+.flint-modal-toggle {
+  margin: 0 auto;
+  position: relative;
+  width: 18px;
+}
+
+.active.flint-modal-toggle::after{
+  color: #fff;
+  content: 'x';
+  font-family: 'Maison Neue Mono', monospaced;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: -5px;
+  z-index:12;
 }
 
 .love-flint-modal {
-  top: -100%;
+  top: 0;
   left: 0;
   font-family: 'Maison Neue Mono', monospaced;
   background: #000;
   color: #fff;
   letter-spacing: 2px;
-  transition: top 150ms ease-in-out;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.1s ease;
 }
 
 .love-flint-modal.active {
-  top: 0;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
 .love-flint-modal a:link, .love-flint-modal a:visited {
@@ -30,55 +60,73 @@ div.loader {
 }
 
 .love-flint-modal p {
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
   width: 90%;
   max-width: 600px;
   min-width: 300px;
   margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 .love-flint-modal__inner {
   width: 90%;
   max-width: 700px;
-  margin: calc(50vh - 180px) auto;
+  margin: calc(50vh - 80px) auto;
   position: relative;
 }
 
-.love-flint-modal__inner span {
-  font-size: 22px;
-  position: absolute;
-  top: 50%;
-}
 
 .love-flint-modal p:last-child {
-  margin-top: 10%;
+  margin-top: 5%;
   color: #666;
 }
 
 body, html {
   padding: 0;
-  margin: 0;
   height: 100%;
+  -webkit-tap-highlight-color:transparent;
 }
 
 body {
   background: #f2f2f2;
+  display: table;
+  margin: 0 auto;
   overflow: hidden;
+  vertical-align: middle;
 }
 
 .content-container {
-  display: table;
+  display: table-cell;
   justify-content: center;
   align-items: center;
   z-index: 1;
+  margin: 0 auto;
+  max-width: 1600px;
   width: 100vw;
   height: 100vh;
+  vertical-align: middle;
 }
 
 .table-row {
   display: table-row;
+  height: 15vh;
+}
+
+.table-row.top {
+  height: 10vh;
+}
+
+.outer.top .middle {
+  bottom: 3vw;
+  vertical-align: bottom;
+}
+
+.outer.bottom .middle {
+  top: 4.5vw;
+  vertical-align: top;
 }
 
 .table-cell {
@@ -96,16 +144,8 @@ body {
   width: 70vw;
 }
 
-.table-row.outer .table-cell {
-  height: calc(20vh - 50px);
-}
-
-.table-row.inner .table-cell {
-  height: calc(60vh - 50px);
-}
-
 .sidebar-img {
-  width: 16px;
+  width: 18px;
 }
 
 .main-content {
@@ -115,21 +155,20 @@ body {
 
 h2 {
   font-family: 'Maison Neue Mono', monospaced;
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 2px;
   text-align: center;
   width: 100%;
   text-transform: uppercase;
   position: relative;
-  top: 5%;
 }
 
-h1 {
+.main-headline {
   background: url('') no-repeat center center / 140%;
   display: table-cell;
   margin: 0 auto;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 90%;
   max-width: 800px;
   position: absolute;
   left: 0;
@@ -139,6 +178,11 @@ h1 {
 
 * {
   cursor: help;
+}
+
+.headline-container {
+  display: table;
+  margin: 0 auto;
 }
 
 .button-container {
@@ -158,6 +202,7 @@ h1 {
   display: block;
   padding: 0;
   margin: 0 auto;
+  outline: none;
   position: relative;
 }
 
@@ -166,11 +211,52 @@ h1 {
   -webkit-appearance: none;
   content: '';
   display: block;
-  height: 6px;
+  height: 4px;
   position: absolute;
-  bottom: -40%;
+  bottom: -30%;
   max-width: 300px;
   width: 100%;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  /*Safari and Chrome*/
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-play-state:running;
+}
+
+@media only screen and (max-width: 600px) {
+  .outer.top .middle {
+    bottom: 6vw;
+    vertical-align: bottom;
+  }
+
+  .outer.bottom .middle {
+    top: 8vw;
+    vertical-align: top;
+  }
+
+  .how-about-now {
+    width: 200px;
+  }
+
+  .how-about-now:after {
+    bottom: -5%;
+    height: 3px;
+    max-width: 200px;
+  }
+
+  .active.flint-modal-toggle::after{
+    color: #fff;
+    content: 'x';
+    font-family: 'Maison Neue Mono', monospaced;
+    font-size: 20px;
+    position: absolute;
+    width: 18px;
+    bottom: -25%;
+    right: -250%;
+    z-index:12;
+  }
 }
 
 img.frank {
@@ -180,7 +266,7 @@ img.frank {
   max-width: 100%;
 }
 
-h1.loading {
+.main-headline.loading {
   width: 70%;
   background: url('../images/questionmark.svg') no-repeat center center / 20%;
   -webkit-animation:spin 1.5s linear infinite;

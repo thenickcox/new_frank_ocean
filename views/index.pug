@@ -7,22 +7,25 @@ html
     link(rel='shortcut icon' href='images/favicon.ico' type='image/x-icon')
   body
     // div.loader.modal
+      h2 Searching Spotify's API for the goods
     div.content-container
-      .table-row.outer
+      .table-row.outer.top
         .table-cell.side
         .table-cell.middle
           h2 Is the new Frank Ocean record out yet?
         .table-cell.side
       .table-row.inner
         .table-cell.side
-          img(src='images/flint_f.svg', class='sidebar-img flint-logo flint-modal-toggle')
+          .flint-modal-toggle.modal-close
+            img(src='images/flint_f.svg', class='sidebar-img flint-logo')
         .table-cell.middle
-          h1.loading
-          img.frank(src='images/frank/frank-1.png')
+          .headline-container
+            .main-headline.loading
+            img.frank(src='images/frank/frank-1.png')
         .table-cell.side
           a(href="spotify:artist:2h93pZq0e7k5yf4dywlkpM")
             img(src='images/spotify_logo.png', class='sidebar-img')
-      .table-row.outer
+      .table-row.outer.bottom
         .table-cell.side
         .table-cell.middle
           div.button-container
@@ -30,16 +33,15 @@ html
         .table-cell.side
     div.love-flint-modal.modal.js-hide
       div.love-flint-modal__inner
-        span.flint-modal-toggle &times;
         p A friendly reminder that we are as excited about the Frank Ocean record as you are. Check back soon. Maybe it'll be out.
         p
           |Love,
           br
-          a(href="http://flintmade.co") Flint
-          |,&nbsp;
-          a(href="http://boysdontcry.co/") Frank
-          |,&nbsp;
-          a(href="http://www.terryrichardson.com/") Terry
+          a(href="http://flintmade.co" target="_blank") Flint
+          | &nbsp;+&nbsp;
+          a(href="http://boysdontcry.co/" target="_blank") Frank
+          | &nbsp;+&nbsp;
+          a(href="http://www.terryrichardson.com/" target="_blank") Terry
     script.
       WebFontConfig = { fontdeck: { id: '57381' } };
       (function() {
