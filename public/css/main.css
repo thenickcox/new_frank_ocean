@@ -26,7 +26,7 @@ div.loader {
 .active.flint-modal-toggle::after{
   color: #fff;
   content: 'x';
-  font-family: 'Maison Neue Mono', monospaced;
+  font-family: 'Maison Neue Mono', monospace;
   font-size: 20px;
   position: absolute;
   bottom: 0;
@@ -39,19 +39,19 @@ div.loader {
 .love-flint-modal {
   top: 0;
   left: 0;
-  font-family: 'Maison Neue Mono', monospaced;
+  font-family: 'Maison Neue Mono', monospace;
   background: #000;
   color: #fff;
   letter-spacing: 2px;
-  display: none;
+  visibility: hidden;
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: visibility 0s 500ms, opacity 500ms ease;
 }
 
 .love-flint-modal.active {
-  display: block;
+  visibility: visible;
   opacity: 1;
-  transition: opacity 0.25s ease;
+  transition: opacity 500ms ease;
 }
 
 .love-flint-modal a:link, .love-flint-modal a:visited {
@@ -154,7 +154,7 @@ body {
 }
 
 h2 {
-  font-family: 'Maison Neue Mono', monospaced;
+  font-family: 'Maison Neue Mono', monospace;
   font-size: 13px;
   letter-spacing: 2px;
   text-align: center;
@@ -249,7 +249,7 @@ h2 {
   .active.flint-modal-toggle::after{
     color: #fff;
     content: 'x';
-    font-family: 'Maison Neue Mono', monospaced;
+    font-family: 'Maison Neue Mono', monospace;
     font-size: 20px;
     position: absolute;
     width: 18px;
