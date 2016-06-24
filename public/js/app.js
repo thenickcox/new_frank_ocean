@@ -19,10 +19,9 @@ var check = function() {
 $(document).ready(function() {
   setTimeout(function() {
     $('div.loader').fadeOut('slow');
-  }, 2000);
-
-  setTimeout(function() {
-    check();
+    setTimeout(function() {
+      check();
+    }, 2000);
   }, 2000);
 
   $('button').click(function(){
