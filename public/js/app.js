@@ -7,11 +7,13 @@ var check = function() {
         .addClass('loading');
     },
     success: function(data) {
-      $('.main-headline')
-        .css('background-image', 'url(images/' + data.backgroundImage + ')')
-        .removeClass('loading');
-      var imageNum = Math.floor(Math.random() * 5) + 1;
-      $('img.frank').attr('src', 'images/frank/frank-' + imageNum + '.png');
+      setTimeout(function() {
+        $('.main-headline')
+          .css('background-image', 'url(images/' + data.backgroundImage + ')')
+          .removeClass('loading');
+        var imageNum = Math.floor(Math.random() * 5) + 1;
+        $('img.frank').attr('src', 'images/frank/frank-' + imageNum + '.png');
+      }, 1500);
     }
   });
 }
@@ -25,8 +27,8 @@ $(document).ready(function() {
     $('div.loader').fadeOut('slow');
     setTimeout(function() {
       check();
-    }, 2000);
-  }, 2000);
+    }, 1500);
+  }, 1500);
 
   $('button').click(function(){
     $(this).text('How about now?');
