@@ -27,6 +27,10 @@ $(document).ready(function() {
     check();
   });
 
+  $('.main-headline').click(function(){
+    check();
+  });
+
   $('.flint-modal-toggle').click(function(){
     $('.love-flint-modal').toggleClass('active');
     $('.flint-modal-toggle').toggleClass('active');
