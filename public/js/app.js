@@ -17,6 +17,10 @@ var check = function() {
 }
 
 $(document).ready(function() {
+  for (var i = 0; i < 5; i++) {
+    var img = new Image();
+    img.src = 'images/frank/frank-' + i + '.png';
+  }
   setTimeout(function() {
     $('div.loader').fadeOut('slow');
     setTimeout(function() {
