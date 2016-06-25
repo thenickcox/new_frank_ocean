@@ -20,7 +20,7 @@ div.loader {
 .flint-modal-toggle {
   margin: 0 auto;
   position: relative;
-  width: 18px;
+  width: 20px;
 }
 
 .active.flint-modal-toggle::after{
@@ -99,34 +99,22 @@ body {
 }
 
 .content-container {
-  display: table-cell;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
   margin: 0 auto;
-  max-width: 1600px;
-  width: 100vw;
   height: 100vh;
   vertical-align: middle;
 }
 
 .table-row {
   display: table-row;
-  height: 15vh;
 }
 
 .table-row.top {
-  height: 10vh;
+  height: 20vh;
 }
 
-.outer.top .middle {
-  bottom: 3vw;
-  vertical-align: bottom;
-}
-
-.outer.bottom .middle {
-  top: 4.5vw;
-  vertical-align: top;
+.table-row.bottom {
+  height: 24vh;
 }
 
 .table-cell {
@@ -137,15 +125,25 @@ body {
 }
 
 .table-cell.side {
-  width: 15vw;
+  width: 20vh;
+}
+
+.side img {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.side img:hover {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
 .table-cell.middle {
-  width: 70vw;
+  width: 80vh;
 }
 
 .sidebar-img {
-  width: 18px;
+  width:20px;
 }
 
 .main-content {
@@ -161,6 +159,7 @@ h2 {
   width: 100%;
   text-transform: uppercase;
   position: relative;
+  margin-bottom: 0;
 }
 
 .main-headline {
@@ -204,15 +203,9 @@ h2 {
   margin: 0 auto;
   outline: none;
   position: relative;
-  transition: bottom 75ms ease;
-}
-
-.how-about-now:hover {
-  bottom: 2px;
-}
-
-.how-about-now:hover:after {
-  bottom: -42%;
+  animation: appear 0.75s ease;
+  animation-delay: 2000ms;
+  animation-iteration-count: 1;
 }
 
 .how-about-now:after {
@@ -221,10 +214,13 @@ h2 {
   content: '';
   display: block;
   height: 4px;
+  overflow: hidden;
   position: absolute;
   bottom: -30%;
   max-width: 300px;
-  width: 100%;
+  width: 300px;
+  transform: scale(0,1);
+  transition: all 0.25s ease-in-out;
 
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -234,25 +230,45 @@ h2 {
   -webkit-animation-play-state:running;
 }
 
+.how-about-now:hover.how-about-now:after {
+  pointer: ;
+  transform: scale(1);
+}
+
 @media only screen and (max-width: 600px) {
-  .outer.top .middle {
-    bottom: 6vw;
-    vertical-align: bottom;
+  h2 {
+    font-size: 12px;
+    margin-bottom: 0;
   }
 
-  .outer.bottom .middle {
-    top: 8vw;
-    vertical-align: top;
+  .outer.top {
+    height: 33vh;
+  }
+
+  .outer.bottom {
+    height: 34.5vh;
+  }
+
+  .table-row.inner {
+    height: 20vh;
+  }
+
+  .inner .middle {
+    width: 80vw;
+  }
+
+  .inner .side {
+    width: 10vw;
   }
 
   .how-about-now {
-    width: 200px;
+    width: 240px;
   }
 
   .how-about-now:after {
     bottom: -5%;
     height: 3px;
-    max-width: 200px;
+    max-width: 240px;
   }
 
   .active.flint-modal-toggle::after{
@@ -261,10 +277,14 @@ h2 {
     font-family: 'Maison Neue Mono', monospace;
     font-size: 20px;
     position: absolute;
-    width: 18px;
+    width: 20px;
     bottom: -25%;
     right: -250%;
     z-index:12;
+  }
+
+  .sidebar-img {
+    width: 16px;
   }
 }
 
@@ -286,6 +306,62 @@ img.frank {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+@-moz-keyframes appear { 
+  0% {
+    bottom: -500px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  } 
+}
+@-webkit-keyframes appear { 
+  0% {
+    bottom: -500px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  } 
+}
+@keyframes appear { 
+  0% {
+    bottom: -500px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  } 
+}
+
+@-moz-keyframes img-appear { 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+@-webkit-keyframes img-appear { 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+@keyframes img-appear { 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
+
 ::selection {
   color: #f2f2f2;
   background: #000;
@@ -294,11 +370,4 @@ img.frank {
 ::-moz-selection {
   color: #f2f2f2;
   background: #000;
-}
-
-.qmark-random {
-  z-index: 9999;
-  position: fixed;
-  width: 62px;
-  height: 150px;
 }

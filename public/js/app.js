@@ -43,15 +43,4 @@ $(document).ready(function() {
     $('.love-flint-modal').toggleClass('active');
     $('.flint-modal-toggle').toggleClass('active');
   });
-
-  setTimeout(function(){
-    setInterval(function(){
-      $('body')
-        .append('<img class="qmark-random"' +
-          'style=top:' + Math.random() * 100 + '%;' +
-          'left:' + Math.random() * 100 + '%;' +
-          'transform:rotate(' + Math.floor(Math.random() * 360) + 'deg) ' +
-          'src="images/questionmark.svg" />');
-    }, 1500);
-  }, 1000 * 30);
 });
