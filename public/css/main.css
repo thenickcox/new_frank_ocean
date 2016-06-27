@@ -60,15 +60,15 @@ div.loader {
 }
 
 .love-flint-modal p {
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 0.2em;
-  width: 90%;
+  width: 75%;
   max-width: 600px;
   min-width: 300px;
   margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
-  line-height: 1.65;
+  line-height: 2.2;
 }
 
 .love-flint-modal__inner {
@@ -80,7 +80,7 @@ div.loader {
 
 
 .love-flint-modal p:last-child {
-  margin-top: 5%;
+  margin-top: 25%;
   color: #666;
 }
 
@@ -125,17 +125,27 @@ body {
 }
 
 .table-cell.side {
+  margin: 0 auto;
   width: 20vh;
 }
 
-.side img {
-  opacity: 1;
-  transition: opacity 0.2s ease;
+.flint-logo {
+  background: #191414;
+  -webkit-mask: url('../images/flint_f.svg') center / contain no-repeat;
+  mask: url('../images/flint_f.svg') center / contain no-repeat;
+  transition: background 0.2s ease-in-out;
 }
 
-.side img:hover {
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
+.spotify-logo {
+  background: #191414;
+  -webkit-mask: url('../images/spotify_logo.svg') center / contain no-repeat;
+  mask: url('../images/spotify_logo.svg') center / contain no-repeat;
+  transition: background 0.2s ease-in-out;
+}
+
+.flint-logo:hover, .spotify-logo:hover {
+  background: #f90b0b;
+  transition: background 0.2s ease-in-out;
 }
 
 .table-cell.middle {
@@ -143,6 +153,9 @@ body {
 }
 
 .sidebar-img {
+  display: block;
+  margin: 0 auto;
+  height: 20px;
   width:20px;
 }
 
@@ -204,7 +217,7 @@ h2 {
   outline: none;
   position: relative;
   animation: appear 0.75s ease;
-  animation-delay: 2000ms;
+  animation-delay: 1500ms;
   animation-iteration-count: 1;
 }
 
@@ -220,7 +233,7 @@ h2 {
   max-width: 300px;
   width: 300px;
   transform: scale(0,1);
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
