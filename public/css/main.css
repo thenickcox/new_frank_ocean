@@ -216,7 +216,7 @@ h2 {
   margin: 0 auto;
   outline: none;
   position: relative;
-  animation: appear 0.75s ease;
+  animation: appear 1550ms ease-in-out;
   animation-delay: 1500ms;
   animation-iteration-count: 1;
 }
@@ -298,6 +298,10 @@ h2 {
 
   .sidebar-img {
     width: 16px;
+  }
+
+  .love-flint-modal__inner {
+    margin: calc(35vh - 80px) auto;
   }
 }
 
