@@ -317,11 +317,11 @@ h2 {
   }
 
   .love-flint-modal__inner p:first-of-type {
-    top: 25px;
+    top: 50px;
   }
 
   .love-flint-modal__inner p:last-of-type {
-    bottom: 25px;
+    bottom: 50px;
   }
 }
 

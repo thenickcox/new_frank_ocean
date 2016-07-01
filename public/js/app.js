@@ -53,7 +53,7 @@ $(document).ready(function() {
           'transform:rotate(' + Math.floor(Math.random() * 360) + 'deg) ' +
           'src="images/questionmark.svg" />');
     }, 1500);
-  }, 1000 * 30);
+  }, 1000 * 15);
 
   $('body').click(function() {
     window.clearTimeout(window.timer);
