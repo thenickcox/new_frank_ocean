@@ -44,8 +44,8 @@ $(document).ready(function() {
     $('.flint-modal-toggle').toggleClass('active');
   });
 
-  setTimeout(function(){
-    setInterval(function(){
+  window.timer = setTimeout(function(){
+    window.interval = setInterval(function(){
       $('body')
         .append('<img class="qmark-random"' +
           'style=top:' + Math.random() * 100 + '%;' +
@@ -54,4 +54,10 @@ $(document).ready(function() {
           'src="images/questionmark.svg" />');
     }, 1500);
   }, 1000 * 30);
+
+  $('body').click(function() {
+    window.clearTimeout(window.timer);
+    window.clearInterval(window.interval);
+    $('.qmark-random').remove();
+  });
 });
