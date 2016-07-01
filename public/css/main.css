@@ -301,9 +301,30 @@ h2 {
   }
 
   .love-flint-modal__inner {
-    margin: calc(35vh - 80px) auto;
+    position: fixed;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+  }
+
+  .love-flint-modal__inner p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 75%;
+    font-size: 0.8em;
+  }
+
+  .love-flint-modal__inner p:first-of-type {
+    top: 25px;
+  }
+
+  .love-flint-modal__inner p:last-of-type {
+    bottom: 25px;
   }
 }
+
 
 img.frank {
   margin: 0 auto;
